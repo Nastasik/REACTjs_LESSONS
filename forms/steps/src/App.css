@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+.App {
+  text-align: center;
+  font-weight: bold;
+  margin: auto;
+  width: 450px;
+}
+
+form {
+  display: flex;
+  align-items: flex-end;
+  align-content: center; 
+  justify-content: space-between;    
+}
+
+label {
+  display: block;
+  margin: 10px;
+}
+
+label, i, p {
+  font-weight: bold;  
+}
+
+input, form button, .progress-data {
+  position: relative;
+  border: 2px solid black;
+  border-radius: 15px;
+  outline: none;
+  font-weight: bold;
+  font-size: 16px;  
+  line-height: 16px; 
+  text-transform: uppercase; 
+}
+
+input {
+  box-sizing: border-box;
+  text-align: center;  
+  width: 150px;
+  height: 50px;    
+  background-color: none;
+}
+
+form button {
+  background: white;  
+  height: 50px;
+  width: 100px;
+  /* font-weight: bol; */
+
+}
+
+.progress {
+  margin-top: 50px;
+}
+
+.progress-headers {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  margin-right: 20px;
+}
+
+.progress-data {  
+  padding: 15px;
+}
+
+.progress-data li {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.progress-data button {
+  background: none;
+  border: none;
+}
+
+input[type="number"]::-webkit-inner-spin-button {
+  display: none;
+}
+
+input[type="date"]::-webkit-inner-spin-button {
+  width: 25px;
+  margin: 11px 9px;   
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator:hover {
+  color: transparent;
+  opacity: 1;
+  background: url(https://image.freepik.com/free-icon/_318-9776.jpg) no-repeat center;
+  background-size: contain;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {   
+    position: absolute;
+    left: 3px;
+    top: 15px;
+    width: 10px;
+    margin: 0 3px;    
+}
+
+input[type="date"]::-webkit-datetime-edit-text {   
+  text-align: center;  
+}
+
+input[type="date"]::-webkit-datetime-edit-fields-wrapper { 
+  position: absolute;
+  left: 26px;   
+  top: 14px;
+}
+
+input[type="date"]::-webkit-datetime-edit { 
+  background: coral;
+}
