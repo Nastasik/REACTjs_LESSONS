@@ -1,0 +1,193 @@
+.App {
+  text-align: center;
+}
+
+li {
+  display: flex;
+  height: 20px;
+  margin: 15px 0;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+ul {  
+  padding: 0 20px;
+  margin: 0 auto;
+  max-width: 1155 px;
+  border: 5px dashed LightSteelBlue;
+}
+
+a {
+  text-decoration: none;
+}
+
+h2 {
+  margin: 10px  0;
+  padding: 0 25px;
+}
+
+a, p, label {
+  padding: 0;
+  margin: 2px;  
+  font-size: 20px;
+}
+
+label {
+  display: block;
+  width: 20px;
+  height: 20px;
+  background: coral;  
+}
+
+.weather {
+  padding: 0 20px;
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.weather label {
+  width: 60px;
+  height: 60px;
+  background:  MediumOrchid;
+}
+
+.weather p:first-of-type {
+  font-size: 50px;
+  line-height: 50px;
+  padding: 0 10px;
+}
+
+.page {
+  display: inline-block;
+  max-width: 1500px;  
+  margin: 0 auto;
+}
+
+.main-news {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+}
+
+.main-news > .widget a {
+  line-height: 32px;
+  margin: 10px 10px;
+}
+
+.main-news > .widget, .page > .widget-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.main-news-time {
+  font-size: 20px;
+  line-height: 32px;
+  margin: 10px 10px;
+}
+
+.page > .widget-list li {
+  padding: 0 10px;
+}
+
+.widgets, .widget {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.widgets {  
+  color: black;  
+  max-height: 700px;
+}
+
+.widget {
+  position: relative;   
+  justify-content: flex-end;
+  align-items: flex-start;   
+  margin: 20px;
+  padding: 40px;
+  border: 5px dashed Fuchsia;
+}
+
+.widget > a {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: DimGray;
+}
+
+.widget > p {
+  color: grey;
+}
+
+.widget-list > li {
+  position: relative;
+}
+
+.widget-list label, .search img {
+  position: absolute;
+  top: 0;
+  left: -15px;
+}
+
+.tv-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100px;
+  height: 40px;
+  margin: 45px;
+  background: Aquamarine;
+  border: none;
+  border-radius: 5px;
+}
+
+/*=========== ПОИСК ============*/
+
+input[type="text"] {
+  border: 1px solid #cccccc;   
+  background: #ffffff !important; 
+  outline: none; 
+  height: 50px;      
+}
+
+input[type="text"], .search label, .search-bar, .page > .widget-list {
+  width: 1115px; 
+  padding: 0 20px;  
+}
+
+.search-bar a {
+  margin: 0 10px;  
+}
+
+.search-bar, input[type="text"], .search label {
+  margin: 10px 20px;
+}
+
+.search {
+  position: relative;  
+}
+
+.search img {
+  background: MediumOrchid;
+  width: 120px;
+  height: 50px;
+  left: 15px;
+  margin: 10px 0;
+}
+
+.search label { 
+  background: none;  
+  left: -120px;  
+}
+
+.error-handling-img {
+  position: absolute;
+  top: -140px;
+  width: 120px;
+  height: 120px;
+}
+
+label.error-handling-img  {
+  background: MediumOrchid;
+}
