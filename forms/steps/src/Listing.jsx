@@ -8,10 +8,14 @@ function Listing(props) {
       setProgress(prevProgress => prevProgress.filter(item => item.id !== id));      
     }
 
-    const handleEdit = id => {
+    const handleEdit = (id) => {
         const day = progress.find((item) => item.id === id);
+       
         setForm({date: day.date, distance: day.distance});
-        handleDelete(id);
+        setProgress((prevProgress) => {
+            day.distance = '';
+            return [...prevProgress]
+        });       
     }
 
     return (
