@@ -1,0 +1,74 @@
+.App {
+  text-align: center;
+  vertical-align: middle;
+  font-weight: bold;   
+}
+
+button, input {
+  outline: none;
+}
+
+button {
+  width: 20px;
+  height: 20px;
+  background: none;
+  border: 1px solid grey;
+  border-radius: 10px;
+  padding: 0;
+  vertical-align: middle;
+  font-weight: bold;
+}
+
+label {
+  padding: 15px;
+}
+
+.crud {
+  width: 700px;
+  margin: auto;
+}
+
+.notes {
+  padding: 15px;
+}
+
+.notes button {
+  color: green;
+}
+
+.notes-container {
+    max-width: 700px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+.card {
+  position: relative;
+  color: black;
+  width: 275px;
+  padding: 15px;
+  margin: 15px;
+  border: 1px solid grey;
+}
+
+.card button {
+  color: red;
+  position: absolute;
+  background: white;
+  top: -10px;
+  right: -10px;
+}
+
+.input-form {
+  position: relative;
+  max-width: 300px;
+  margin: auto;
+}
+
+.input-form button{
+  color: green;
+  position: absolute;
+  top: 3px;
+  right: -20px;
+}
