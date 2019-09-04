@@ -1,6 +1,5 @@
 import React from 'react';
 import Card from './Card';
-import nanoid from 'nanoid';
 
 function Cards(props) {
   const cardsContent = [{
@@ -17,7 +16,7 @@ function Cards(props) {
 
   return (
     <div className='cards_collection'>
-        {cardsContent.map(card => <Card {...card} key = {nanoid()}>{card.children}</Card>)}
+        {cardsContent.map((card, i) => <Card {...card} key = {i}>{props.children}</Card>)}
     </div>
   )
 }
