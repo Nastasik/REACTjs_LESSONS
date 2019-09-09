@@ -1,0 +1,120 @@
+.App {
+  text-align: center;
+}
+
+ul {  
+  list-style-type: none;
+  box-sizing: border-box;
+  max-width: 632px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+label {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+form {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  max-width: 700px;
+  min-width: 700px;
+  padding: 0 25px;  
+  margin: auto;
+}
+
+hr {
+  background: none;
+  padding: 0;
+  border-style: dashed;
+  border-width: 5px;  
+}
+
+ul, form, hr {
+  margin-top: 20px;
+}
+
+form button, form input, form label {    
+  max-width: 170px;
+  margin: 0;    
+}
+
+form input {
+  box-sizing: border-box;
+  height: 22px;
+  padding: 2px 15px;
+  margin-top: 10px;
+  margin-bottom: 3px;
+}
+
+form button {
+  padding: 5px 10px;
+  min-height: 30px;
+  font-size: 16px;
+}
+
+button {
+  outline: none;
+}
+
+ul > li {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  border: 1px solid lightgrey;
+  border-bottom: none;
+  min-width: 600px;
+}
+
+ul li:last-child {
+	border: 1px solid lightgrey;
+}
+
+li > p {
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+  min-width: 525px;
+  max-width: 525px;
+  font-size: 18px;
+}
+
+ul button, ul a, ul button {
+  box-sizing: border-box;
+  width: 30px;
+  height: 30px; 
+}
+
+ul button, ul a, ul button, form button {  
+  background: Crimson;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+}
+
+.error {
+  display: block;
+  text-align: center;
+  box-sizing: border-box;
+  max-width: 632px;
+  left: 50%;
+  margin: 20px auto;
+  padding: 30px;
+  color: FireBrick;
+  border: 1px solid FireBrick;
+  font-weight: bold;
+  font-size: 20px;
+  background: PeachPuff;
+}
+
+div.circular {
+  display: block;
+  position: relative;
+  box-sizing: border-box;
+  padding: 200px 300px;
+  margin: auto;
+  max-width: 632px;
+}
