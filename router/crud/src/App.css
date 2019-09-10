@@ -1,8 +1,114 @@
+button {
+  padding: 15px;
+  margin: 15px;
+  border-radius: 10px;
+  background: DarkCyan;
+  border: none;
+  color: white;
+  font-size: 16px;
+  font-weight: bold; 
+}
+
+input, button {
+  outline: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:visited {
+  color: Black; 
+ }
+
+h2 {
+  color: DarkSlateGray;
+  display: inline-block;
+  width: 400px;
+  border: 5px dashed OliveDrab;  
+  padding: 40px;
+  background: PowderBlue;
+  margin: 0 auto 20px auto;
+  vertical-align: middle;
+}
+
+input {
+  font-size: 20px;
+  font-weight: bold;
+  min-width: 300px;
+  padding: 20px;
+  margin: 35px;
+  margin-top: 0;
+  border: 1px solid lightgray;
+}
+
 .App {
+  position: relative;
   text-align: center;
+  max-width: 700px;
+  min-height: 100%;
+  margin: 20px auto;
+  padding: 20px;
+  background: Gainsboro;
+  border-radius: 20px;
+  
+}
+
+.container {
+  display: flex;
+  margin: auto;
+  justify-content: center;
+}
+
+.list a, .list div {
+  position: relative;
+  margin: 0 auto;
+  margin-bottom: 20px;  
+}
+
+.card {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+  background: white;
+  box-sizing: border-box;
+  border-radius: 20px;
+  width: 600px;
+  min-height: 350px;
+  box-shadow: 10px 10px 10px Olive;
+}
+
+.card p {
+  color: grey;
+  font-size: 24px;
+  font-weight: bold;
+  max-height: 30px;
+  padding: 5px;
+  margin: 20px 30px; 
 }
 
 .list {
-  width: 600px;
- 
+  width: 600px; 
+  margin: auto;
+}
+
+div.avatar {
+  background: linear-gradient(315deg, rgb(235, 235, 235) 50%, Beige 50%); 
+  width: 110px;
+  height: 110px;
+  margin: 40px;  
+}
+
+button.close {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  width: 45px;
+  height: 45px;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 24px;
+  padding: 0;
 }

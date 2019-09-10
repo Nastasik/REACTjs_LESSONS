@@ -9,14 +9,12 @@ function PostCreate({setPosts}) {
   };
  
   const fetchData = async () => {
-    const response = await fetch("http://localhost:7777/posts");
-    console.log(response, 'response');
-    const json = await response.json();         
-    console.log(json, 'date');      
-    setPosts({posts: json});   
-}
+      const response = await fetch("http://localhost:7777/posts");  
+      const json = await response.json();
+      setPosts({posts: json});   
+  }
 
-  const handleClick = () => {
+  const handleSubmit = () => {
           fetch("http://localhost:7777/posts", {
                 method: 'POST',
                 headers: {                    
@@ -33,15 +31,15 @@ function PostCreate({setPosts}) {
             .catch((error) => {
                 console.log(error);
             })
-      }
+  }
   
   return (
     <div className="create">
-      <h1>Create post</h1>
-      <div className="create__content">
+      <h2>Создать пост</h2>
+      <form onSubmit={handleSubmit}>
         <textarea rows="3" cols="50" onChange={handleChange} />       
-        <button onClick={handleClick} className="button">Опубликовать</button>       
-      </div>
+        <button type='submit'>Опубликовать</button>       
+      </form>
     </div>
   );
 }

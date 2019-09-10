@@ -1,48 +1,62 @@
 import React, { useState, useEffect } from "react";
-import { withRouter } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 
-function PostEdit({ match, setPosts, posts, onRemove }) {
- 
-console.log(posts, 'post11')
-  const [post, setPost] = useState("");
-  const id = Number(match.params.id);
-  console.log(posts.posts, 'match.params.id')
-  console.log(post, 'post')
+function PostView({ match, setPosts, posts }) { 
+    const [post, setPost] = useState("");
+    const id = Number(match.params.id);
 
     useEffect(() => {
         if(posts.posts !== undefined) {
-        const postIndex = posts.posts.findIndex((post) => post.id === id);
+            const postIndex = posts.posts.findIndex((post) => post.id === id);
+            const postData = posts.posts[postIndex];           
+            setPost({post: postData});
+        }
+    }, [id, posts]);
 
-            console.log(postIndex, 'postIndex')
-        const postData = posts.posts[postIndex];
-        console.log(postData, 'postData')
-        setPost({post: postData});}
-    }, [id]);
+    const fetchData = async () => {
+      const response = await fetch("http://localhost:7777/posts");     
+      const json = await response.json();      
+      setPosts({posts: json});   
+    }
 
-const back = () => {
-  window.history.back();
+    const onRemove = () => {           
+        fetch("http://localhost:7777/posts/" + id, {              
+                method: "DELETE",             
+            }).then(() => {                     
+                fetchData(); 
+            }).then(() => {
+                window.history.back();
+            })         
+            .catch((error) => {
+                console.log(error);
+            })      
+        fetchData();      
+    }
+
+    const back = () => {
+        window.history.back();
+    }
+
+    return (
+      post.post!==undefined && 
+          <div className="card">
+                <button type="button" className="close" onClick={back}>x</button>
+                <div className="avatar">
+                    <img src="" alt="" />
+                </div>
+                <p className="author">Отправитель</p>
+                <p>{post.post.created}</p>
+                <h2>{post.post.content}</h2>
+                <div className="container">        
+                    <Link to={`/posts/${post.post.id}/edit`}>
+                        <button>Изменить</button>
+                    </Link> 
+                    <form onSubmit={onRemove}>      
+                        <button type="submit">Удалить</button> 
+                    </form>     
+                </div>  
+          </div>         
+    );
 }
 
-console.log(post, 'POST((')
-  return (
-    post.post!==undefined && <div className="card">
-      <div className="close" onClick={back}>x</div> 
-      <div className="avatar">
-        <img src="" alt="" />
-      </div>      
-      <div className="content">
-        <div className="author">Отправитель</div>
-        <div>{post.post.created}</div>
-        <h1>{post.post.content}</h1>
-        
-        <Link to={`/posts/${post.id}/edit`}>
-            <button className="form-button">Изменить</button>
-        </Link>       
-        <button onClick={onRemove(id)} className="button-delete">Удалить</button>
-        
-      </div>
-    </div>
-  );
-}
-
-export default withRouter(PostEdit);
+export default withRouter(PostView);

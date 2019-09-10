@@ -1,49 +1,24 @@
 import React, {useState, useEffect} from "react";
 import { BrowserRouter as Router, Link, Route, Switch, Redirect } from "react-router-dom";
-
 import "./App.css";
 import PostsList from './PostsList'
-
+import PostView from './PostView'
 import PostCreate from "./PostCreate";
 import PostEdit from "./PostEdit";
 
 function App() {
-  const [posts, setPosts] = useState([]);
+    const [posts, setPosts] = useState([]);
 
-
-  useEffect(() => {               
-    const fetchData = async () => {
-      const response = await fetch("http://localhost:7777/posts", {
-        method: 'GET'
-      })
-      console.log(response, 'response')  
-      const json = await response.json();         
-      console.log(json, 'date')      
-      setPosts({posts: json});
-      
-  }
-  fetchData();
+    useEffect(() => {               
+        const fetchData = async () => {
+            const response = await fetch("http://localhost:7777/posts", {
+                method: 'GET'
+            });       
+            const json = await response.json();
+            setPosts({posts: json});      
+        }
+        fetchData();
     }, [posts.length]);
-  console.log(posts, 'postsINapp')
- 
-
-  
-  const handleOnRemove = id => () => {
-    const fetchData = async () => {      
-      try {
-          const response = await fetch("http://localhost:7777/posts/" + id, {              
-              metod: 'DELETE'             
-          });   
-                   
-          const data = await response.json();                              
-          setPosts({data});          
-      } catch (error) {
-          console.log(error);
-      } 
-    };
-    fetchData();
-    
-  };
   
     return (
       <div className="App">        
@@ -51,22 +26,18 @@ function App() {
         <Redirect to="/" />        
           <Switch>
             <Route path="/posts/new" exact
-                component={() => <PostCreate setPosts={setPosts}/>}
-            />
+                component={() => <PostCreate setPosts={setPosts}/>}/>
             <Route path="/posts/:id" exact
-                component={() => <PostEdit setPosts={setPosts} posts={posts} onRemove={handleOnRemove} />}
-            />
+                component={() => <PostView setPosts={setPosts} posts={posts}/>}/>
             <Route path="/" exact component={() => (
                 <>               
                     <Link to="/posts/new">
-                      <button className="button">Создать пост</button>
+                      <button className="button">Создать</button>
                     </Link>
                     <PostsList posts={posts}/> 
-                </>)}
-            />
+                </>)}/>
             <Route path="/posts/:id/edit" exact
-                component={() => <PostView setPosts={setPosts} posts={posts} onRemove={handleOnRemove} />}
-            />
+                component={() => <PostEdit setPosts={setPosts} posts={posts} />}/>
           </Switch>
         </Router>
       </div>
