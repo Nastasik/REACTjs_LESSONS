@@ -4,7 +4,7 @@ import Listing from './Listing';
 
 function Steps() {
     const [progress, setProgress] = useState([]);
-    const [form, setForm] = useState({date: '', distance: ''});
+    const [form, setForm] = useState({date: '', distance: '', flag: ''});
 
     return (<>
         <InputForms form={form} setForm={setForm} setProgress={setProgress}/>

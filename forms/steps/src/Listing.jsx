@@ -13,7 +13,7 @@ function Listing(props) {
        
         setForm({date: day.date, distance: day.distance});
         setProgress((prevProgress) => {
-            day.distance = '';
+            day.flag = 'edit';
             return [...prevProgress]
         });       
     }

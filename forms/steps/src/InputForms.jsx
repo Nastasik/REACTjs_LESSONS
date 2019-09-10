@@ -16,8 +16,12 @@ function InputForms(props) {
         const newDay = new StepsItem(nanoid(), form.date, form.distance);
 
         setProgress(prevProgress => {            
-            for (let prevDay of prevProgress) {                
+            for (let prevDay of prevProgress) {
                 if (prevDay.date === newDay.date) {
+                    if(prevDay.flag ===  'edit') {
+                        prevDay.distance = Number(newDay.distance);
+                        return prevProgress.sort(sortDays);
+                    }
                     prevDay.distance = Number(newDay.distance) + Number(prevDay.distance);
                     return prevProgress.sort(sortDays);
                 }
